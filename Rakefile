@@ -10,6 +10,7 @@ begin
     gem.homepage = "http://github.com/markisisme/rtimbl"
     gem.authors = ["Mark Shirley"]
     gem.require_paths = ["lib", "ext"]
+    gem.files.exclude 'swig/'
     gem.extensions = ["ext/extconf.rb"]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

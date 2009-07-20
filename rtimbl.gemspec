@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rtimbl}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mark Shirley"]
@@ -19,10 +19,11 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "VERSION.yml",
      "ext/extconf.rb",
+     "ext/ruby_timbl_wrap.cxx",
      "lib/rtimbl.rb",
-     "swig/rtimbl.i",
-     "swig/rtimbl_wrap.cxx",
+     "rtimbl.gemspec",
      "test/rtimbl_test.rb",
      "test/test_helper.rb"
   ]
