@@ -1,4 +1,4 @@
-%module rtimbl
+%module ruby_timbl
 
 %{
 #include "TimblAPI.h"

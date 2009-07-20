@@ -1828,10 +1828,10 @@ static swig_module_info swig_module = {swig_types, 14, 0, 0, 0, 0};
 
 /* -------- TYPES TABLE (END) -------- */
 
-#define SWIG_init    Init_rtimbl
-#define SWIG_name    "Rtimbl"
+#define SWIG_init    Init_ruby_timbl
+#define SWIG_name    "Ruby_timbl"
 
-static VALUE mRtimbl;
+static VALUE mRuby_timbl;
 
 #define SWIG_RUBY_THREAD_BEGIN_BLOCK
 #define SWIG_RUBY_THREAD_END_BLOCK
@@ -2682,7 +2682,7 @@ swig_class SwigClassGCVALUE;
 
 
 /*
-  Document-method: Rtimbl::GCVALUE.inspect
+  Document-method: Ruby_timbl::GCVALUE.inspect
 
   call-seq:
     inspect -> VALUE
@@ -2715,7 +2715,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::GCVALUE.to_s
+  Document-method: Ruby_timbl::GCVALUE.to_s
 
   call-seq:
     to_s -> VALUE
@@ -2789,7 +2789,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::ConstIterator.dup
+  Document-method: Ruby_timbl::ConstIterator.dup
 
   call-seq:
     dup -> ConstIterator
@@ -2822,7 +2822,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::ConstIterator.inspect
+  Document-method: Ruby_timbl::ConstIterator.inspect
 
   call-seq:
     inspect -> VALUE
@@ -2855,7 +2855,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::ConstIterator.to_s
+  Document-method: Ruby_timbl::ConstIterator.to_s
 
   call-seq:
     to_s -> VALUE
@@ -3110,7 +3110,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::ConstIterator.==
+  Document-method: Ruby_timbl::ConstIterator.==
 
   call-seq:
     ==(x) -> bool
@@ -3154,7 +3154,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::ConstIterator.+
+  Document-method: Ruby_timbl::ConstIterator.+
 
   call-seq:
     +(n) -> ConstIterator
@@ -3205,7 +3205,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::ConstIterator.-
+  Document-method: Ruby_timbl::ConstIterator.-
 
   call-seq:
     -(n) -> ConstIterator
@@ -3372,7 +3372,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::Iterator.dup
+  Document-method: Ruby_timbl::Iterator.dup
 
   call-seq:
     dup -> Iterator
@@ -3627,7 +3627,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::Iterator.inspect
+  Document-method: Ruby_timbl::Iterator.inspect
 
   call-seq:
     inspect -> VALUE
@@ -3660,7 +3660,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::Iterator.to_s
+  Document-method: Ruby_timbl::Iterator.to_s
 
   call-seq:
     to_s -> VALUE
@@ -3693,7 +3693,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::Iterator.==
+  Document-method: Ruby_timbl::Iterator.==
 
   call-seq:
     ==(x) -> bool
@@ -3737,7 +3737,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::Iterator.+
+  Document-method: Ruby_timbl::Iterator.+
 
   call-seq:
     +(n) -> Iterator
@@ -3788,7 +3788,7 @@ fail:
 
 
 /*
-  Document-method: Rtimbl::Iterator.-
+  Document-method: Ruby_timbl::Iterator.-
 
   call-seq:
     -(n) -> Iterator
@@ -7550,11 +7550,11 @@ SWIG_PropagateClientData(void) {
 #ifdef __cplusplus
 extern "C"
 #endif
-SWIGEXPORT void Init_rtimbl(void) {
+SWIGEXPORT void Init_ruby_timbl(void) {
   size_t i;
   
   SWIG_InitRuntime();
-  mRtimbl = rb_define_module("Rtimbl");
+  mRuby_timbl = rb_define_module("Ruby_timbl");
   
   SWIG_InitializeModule(0);
   for (i = 0; i < swig_module.size; i++) {
@@ -7563,7 +7563,7 @@ SWIGEXPORT void Init_rtimbl(void) {
   
   SWIG_RubyInitializeTrackings();
   
-  SwigClassGCVALUE.klass = rb_define_class_under(mRtimbl, "GCVALUE", rb_cObject);
+  SwigClassGCVALUE.klass = rb_define_class_under(mRuby_timbl, "GCVALUE", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_swig__GC_VALUE, (void *) &SwigClassGCVALUE);
   rb_undef_alloc_func(SwigClassGCVALUE.klass);
   rb_define_method(SwigClassGCVALUE.klass, "inspect", VALUEFUNC(_wrap_GCVALUE_inspect), -1);
@@ -7574,7 +7574,7 @@ SWIGEXPORT void Init_rtimbl(void) {
   swig::GC_VALUE::initialize();
   
   
-  SwigClassConstIterator.klass = rb_define_class_under(mRtimbl, "ConstIterator", rb_cObject);
+  SwigClassConstIterator.klass = rb_define_class_under(mRuby_timbl, "ConstIterator", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_swig__ConstIterator, (void *) &SwigClassConstIterator);
   rb_undef_alloc_func(SwigClassConstIterator.klass);
   rb_define_method(SwigClassConstIterator.klass, "value", VALUEFUNC(_wrap_ConstIterator_value), -1);
@@ -7590,7 +7590,7 @@ SWIGEXPORT void Init_rtimbl(void) {
   SwigClassConstIterator.destroy = (void (*)(void *)) free_swig_ConstIterator;
   SwigClassConstIterator.trackObjects = 0;
   
-  SwigClassIterator.klass = rb_define_class_under(mRtimbl, "Iterator", ((swig_class *) SWIGTYPE_p_swig__ConstIterator->clientdata)->klass);
+  SwigClassIterator.klass = rb_define_class_under(mRuby_timbl, "Iterator", ((swig_class *) SWIGTYPE_p_swig__ConstIterator->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_swig__Iterator, (void *) &SwigClassIterator);
   rb_undef_alloc_func(SwigClassIterator.klass);
   rb_define_method(SwigClassIterator.klass, "value=", VALUEFUNC(_wrap_Iterator_valuee___), -1);
@@ -7605,23 +7605,23 @@ SWIGEXPORT void Init_rtimbl(void) {
   SwigClassIterator.mark = 0;
   SwigClassIterator.destroy = (void (*)(void *)) free_swig_Iterator;
   SwigClassIterator.trackObjects = 0;
-  rb_define_const(mRtimbl, "UNKNOWN_ALG", SWIG_From_int(static_cast< int >(Timbl::UNKNOWN_ALG)));
-  rb_define_const(mRtimbl, "IB1", SWIG_From_int(static_cast< int >(Timbl::IB1)));
-  rb_define_const(mRtimbl, "IB2", SWIG_From_int(static_cast< int >(Timbl::IB2)));
-  rb_define_const(mRtimbl, "IGTREE", SWIG_From_int(static_cast< int >(Timbl::IGTREE)));
-  rb_define_const(mRtimbl, "TRIBL", SWIG_From_int(static_cast< int >(Timbl::TRIBL)));
-  rb_define_const(mRtimbl, "TRIBL2", SWIG_From_int(static_cast< int >(Timbl::TRIBL2)));
-  rb_define_const(mRtimbl, "LOO", SWIG_From_int(static_cast< int >(Timbl::LOO)));
-  rb_define_const(mRtimbl, "CV", SWIG_From_int(static_cast< int >(Timbl::CV)));
-  rb_define_const(mRtimbl, "UNKNOWN_W", SWIG_From_int(static_cast< int >(Timbl::UNKNOWN_W)));
-  rb_define_const(mRtimbl, "UD", SWIG_From_int(static_cast< int >(Timbl::UD)));
-  rb_define_const(mRtimbl, "NW", SWIG_From_int(static_cast< int >(Timbl::NW)));
-  rb_define_const(mRtimbl, "GR", SWIG_From_int(static_cast< int >(Timbl::GR)));
-  rb_define_const(mRtimbl, "IG", SWIG_From_int(static_cast< int >(Timbl::IG)));
-  rb_define_const(mRtimbl, "X2", SWIG_From_int(static_cast< int >(Timbl::X2)));
-  rb_define_const(mRtimbl, "SV", SWIG_From_int(static_cast< int >(Timbl::SV)));
+  rb_define_const(mRuby_timbl, "UNKNOWN_ALG", SWIG_From_int(static_cast< int >(Timbl::UNKNOWN_ALG)));
+  rb_define_const(mRuby_timbl, "IB1", SWIG_From_int(static_cast< int >(Timbl::IB1)));
+  rb_define_const(mRuby_timbl, "IB2", SWIG_From_int(static_cast< int >(Timbl::IB2)));
+  rb_define_const(mRuby_timbl, "IGTREE", SWIG_From_int(static_cast< int >(Timbl::IGTREE)));
+  rb_define_const(mRuby_timbl, "TRIBL", SWIG_From_int(static_cast< int >(Timbl::TRIBL)));
+  rb_define_const(mRuby_timbl, "TRIBL2", SWIG_From_int(static_cast< int >(Timbl::TRIBL2)));
+  rb_define_const(mRuby_timbl, "LOO", SWIG_From_int(static_cast< int >(Timbl::LOO)));
+  rb_define_const(mRuby_timbl, "CV", SWIG_From_int(static_cast< int >(Timbl::CV)));
+  rb_define_const(mRuby_timbl, "UNKNOWN_W", SWIG_From_int(static_cast< int >(Timbl::UNKNOWN_W)));
+  rb_define_const(mRuby_timbl, "UD", SWIG_From_int(static_cast< int >(Timbl::UD)));
+  rb_define_const(mRuby_timbl, "NW", SWIG_From_int(static_cast< int >(Timbl::NW)));
+  rb_define_const(mRuby_timbl, "GR", SWIG_From_int(static_cast< int >(Timbl::GR)));
+  rb_define_const(mRuby_timbl, "IG", SWIG_From_int(static_cast< int >(Timbl::IG)));
+  rb_define_const(mRuby_timbl, "X2", SWIG_From_int(static_cast< int >(Timbl::X2)));
+  rb_define_const(mRuby_timbl, "SV", SWIG_From_int(static_cast< int >(Timbl::SV)));
   
-  SwigClassValueClass.klass = rb_define_class_under(mRtimbl, "ValueClass", rb_cObject);
+  SwigClassValueClass.klass = rb_define_class_under(mRuby_timbl, "ValueClass", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_Timbl__ValueClass, (void *) &SwigClassValueClass);
   rb_define_alloc_func(SwigClassValueClass.klass, _wrap_ValueClass_allocate);
   rb_define_method(SwigClassValueClass.klass, "initialize", VALUEFUNC(_wrap_new_ValueClass), -1);
@@ -7631,7 +7631,7 @@ SWIGEXPORT void Init_rtimbl(void) {
   SwigClassValueClass.destroy = (void (*)(void *)) free_Timbl_ValueClass;
   SwigClassValueClass.trackObjects = 0;
   
-  SwigClassTargetValue.klass = rb_define_class_under(mRtimbl, "TargetValue", ((swig_class *) SWIGTYPE_p_Timbl__ValueClass->clientdata)->klass);
+  SwigClassTargetValue.klass = rb_define_class_under(mRuby_timbl, "TargetValue", ((swig_class *) SWIGTYPE_p_Timbl__ValueClass->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_Timbl__TargetValue, (void *) &SwigClassTargetValue);
   rb_define_alloc_func(SwigClassTargetValue.klass, _wrap_TargetValue_allocate);
   rb_define_method(SwigClassTargetValue.klass, "initialize", VALUEFUNC(_wrap_new_TargetValue), -1);
@@ -7639,7 +7639,7 @@ SWIGEXPORT void Init_rtimbl(void) {
   SwigClassTargetValue.destroy = (void (*)(void *)) free_Timbl_TargetValue;
   SwigClassTargetValue.trackObjects = 0;
   
-  SwigClassTimblAPI.klass = rb_define_class_under(mRtimbl, "TimblAPI", rb_cObject);
+  SwigClassTimblAPI.klass = rb_define_class_under(mRuby_timbl, "TimblAPI", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_Timbl__TimblAPI, (void *) &SwigClassTimblAPI);
   rb_define_alloc_func(SwigClassTimblAPI.klass, _wrap_TimblAPI_allocate);
   rb_define_method(SwigClassTimblAPI.klass, "initialize", VALUEFUNC(_wrap_new_TimblAPI), -1);
@@ -7677,8 +7677,8 @@ SWIGEXPORT void Init_rtimbl(void) {
   SwigClassTimblAPI.mark = 0;
   SwigClassTimblAPI.destroy = (void (*)(void *)) free_Timbl_TimblAPI;
   SwigClassTimblAPI.trackObjects = 0;
-  rb_define_module_function(mRtimbl, "to_string_algorithm", VALUEFUNC(_wrap_to_string_algorithm), -1);
-  rb_define_module_function(mRtimbl, "to_string_weighting", VALUEFUNC(_wrap_to_string_weighting), -1);
-  rb_define_module_function(mRtimbl, "string_to", VALUEFUNC(_wrap_string_to), -1);
+  rb_define_module_function(mRuby_timbl, "to_string_algorithm", VALUEFUNC(_wrap_to_string_algorithm), -1);
+  rb_define_module_function(mRuby_timbl, "to_string_weighting", VALUEFUNC(_wrap_to_string_weighting), -1);
+  rb_define_module_function(mRuby_timbl, "string_to", VALUEFUNC(_wrap_string_to), -1);
 }
 
