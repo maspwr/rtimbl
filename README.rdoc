@@ -10,10 +10,10 @@ rtimbl is a Ruby interface to the C++ machine-learning library Timbl.  This is v
 
 = usage
 
+* first require the library
     require 'rtimbl'
     include Ruby_timbl
-
-# now use commands as defined by the Timbl API.
+* now use commands as defined by the Timbl API.
     rt = TimblAPI.new("-k3")
     rt.learn("/path/to/file")
     result = rt.classify("5,0,0,1,0,?") # result is a TargetValue object
