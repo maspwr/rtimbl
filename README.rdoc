@@ -4,7 +4,7 @@ rtimbl is a Ruby interface to the C++ machine-learning library Timbl.  This is v
 
 View the [TiMBL Homepage] [1]
 
-[1]: http://ilk.uvt.nl/timbl/ "TiMBL"
+  [1]: http://ilk.uvt.nl/timbl/ "TiMBL"
 
 = installation
 
