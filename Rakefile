@@ -5,7 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rtimbl"
-    gem.summary = "Ruby wrapper for TiMBL machine-learning library"
+    gem.summary = "Ruby bindings for TiMBL machine learning library"
+    gem.description = "rtimbl provides Ruby language bindings to the TiMBL machine learning library.  See the README for more information."
     gem.email = "markisisme@gmail.com"
     gem.homepage = "http://github.com/markisisme/rtimbl"
     gem.authors = ["Mark Shirley"]
@@ -15,7 +16,7 @@ begin
     gem.has_rdoc = false
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
-
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
@@ -24,7 +25,7 @@ task :default => [:copy_swig_file]
 
 task :copy_swig_file do |t|
   # copy swig file
-  cp 'swig/rtimbl_wrap.cxx', 'ext/'
+  cp 'swig/ruby_timbl_wrap.cxx', 'ext/'
 end
 
 require 'rake/testtask'

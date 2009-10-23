@@ -1,7 +1,7 @@
 %module ruby_timbl
 
 %{
-#include "TimblAPI.h"
+#include "timbl/TimblAPI.h"
 using namespace Timbl;  
 %}
 
