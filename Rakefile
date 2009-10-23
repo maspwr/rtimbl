@@ -12,6 +12,7 @@ begin
     gem.require_paths = ["lib", "ext"]
     gem.files.exclude 'swig/'
     gem.extensions = ["ext/extconf.rb"]
+    gem.has_rdoc = false
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 
